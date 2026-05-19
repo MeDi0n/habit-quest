@@ -36,21 +36,41 @@
   transition: width 0.5s ease;
 }
 
-.level-circle {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 3px solid #e5e7eb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 700;
-  color: #6b7280;
+.level-circle-wrapper {
+  position: relative;
+  width: 56px;
+  height: 56px;
   flex-shrink: 0;
 }
 
-.level-circle.complete {
-  border-color: #22c55e;
+.level-circle-wrapper svg {
+  display: block;
+}
+
+.level-circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+.level-circle-text.complete {
   color: #22c55e;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #e5e7eb;
+  stroke-width: 3;
+}
+
+.circle-progress {
+  fill: none;
+  stroke: #22c55e;
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
 }
