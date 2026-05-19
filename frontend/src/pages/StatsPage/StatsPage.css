@@ -1,0 +1,88 @@
+.stats-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.stats-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.stats-icon {
+  font-size: 20px;
+}
+
+.stats-value {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 4px 0 2px;
+}
+
+.stats-label {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.streaks-section {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.streaks-section h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.streak-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f9fafb;
+}
+
+.streak-row:last-child {
+  border-bottom: none;
+}
+
+.streak-icon {
+  font-size: 20px;
+  width: 28px;
+  text-align: center;
+}
+
+.streak-name {
+  width: 160px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.streak-bar-track {
+  flex: 1;
+  height: 8px;
+  background: #f3f4f6;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.streak-bar-fill {
+  height: 100%;
+  background: #f59e0b;
+  border-radius: 4px;
+  min-width: 4px;
+}
+
+.streak-days {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f59e0b;
+  min-width: 32px;
+  text-align: right;
+}

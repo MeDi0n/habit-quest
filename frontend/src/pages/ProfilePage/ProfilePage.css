@@ -1,0 +1,89 @@
+.profile-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  max-width: 500px;
+}
+
+.profile-character {
+  font-size: 72px;
+  background: #f9fafb;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.character-level {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #16a34a;
+}
+
+.profile-level-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.profile-xp {
+  color: #6b7280;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.profile-progress {
+  margin: 24px 0;
+}
+
+.profile-progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #6b7280;
+}
+
+.profile-progress-track {
+  height: 10px;
+  background: #f3f4f6;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.profile-progress-fill {
+  height: 100%;
+  background: #22c55e;
+  border-radius: 5px;
+}
+
+.evolution-label {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.evolution-stages {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.evolution-item {
+  font-size: 28px;
+}
+
+.evolution-item.locked {
+  opacity: 0.25;
+  filter: grayscale(100%);
+}
+
+.evolution-item.unlocked {
+  opacity: 1;
+}
