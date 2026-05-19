@@ -80,3 +80,54 @@ h2 {
   color: #6b7280;
   font-weight: 500;
 }
+
+.today-layout {
+  display: flex;
+  gap: 32px;
+}
+
+.today-habits {
+  flex: 1;
+}
+
+.quick-stats {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.quick-stats h3 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.quick-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.quick-stat-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+}
+
+.quick-stat-icon {
+  font-size: 18px;
+}
+
+.quick-stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 4px 0 2px;
+}
+
+.quick-stat-label {
+  font-size: 11px;
+  color: #6b7280;
+}
