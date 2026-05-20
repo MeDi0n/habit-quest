@@ -157,3 +157,62 @@
 .delete-btn:hover {
   background: #fee2e2;
 }
+
+.edit-row {
+  flex: 1;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.edit-input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1.5px solid #22c55e;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  background: transparent;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-btn:hover {
+  background: #f3f4f6;
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+}
+
+.save-btn {
+  width: 32px;
+  height: 32px;
+  background: #22c55e;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cancel-edit-btn {
+  width: 32px;
+  height: 32px;
+  background: #f3f4f6;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

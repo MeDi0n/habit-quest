@@ -21,11 +21,11 @@ export default function ManageHabitsPage() {
   const [habits, setHabits] = useState([]);
   const [showForm, setShowForm] = useState(false);
   const [loading, setLoading] = useState(true);
-
+  const [editingId, setEditingId] = useState(null);
+  const [editName, setEditName] = useState("");
   const [newName, setNewName] = useState("");
   const [newIcon, setNewIcon] = useState("🎯");
   const [newXp, setNewXp] = useState(20);
-
   const [stats, setStats] = useState(null);
 
   async function loadData() {
@@ -69,6 +69,21 @@ export default function ManageHabitsPage() {
     if (!window.confirm("Удалить привычку?")) return;
     try {
       await api.delete(`/habits/${id}`);
+      await loadData();
+    } catch (err) {
+      alert(err.message);
+    }
+  }
+
+  function startEdit(habit) {
+    setEditingId(habit.id);
+    setEditName(habit.name);
+  }
+
+  async function saveEdit(id) {
+    try {
+      await api.patch(`/habits/${id}`, { name: editName });
+      setEditingId(null);
       await loadData();
     } catch (err) {
       alert(err.message);
@@ -144,16 +159,45 @@ export default function ManageHabitsPage() {
         {habits.map((habit) => (
           <div key={habit.id} className="manage-habit-card">
             <span className="manage-habit-icon">{habit.icon}</span>
-            <div className="manage-habit-info">
-              <div className="manage-habit-name">{habit.name}</div>
-              <div className="manage-habit-meta">{habit.base_xp} XP</div>
-            </div>
-            <button
-              onClick={() => handleDelete(habit.id)}
-              className="delete-btn"
-            >
-              🗑️
-            </button>
+
+            {editingId === habit.id ? (
+              <div className="edit-row">
+                <input
+                  value={editName}
+                  onChange={(e) => setEditName(e.target.value)}
+                  className="edit-input"
+                  autoFocus
+                />
+                <button onClick={() => saveEdit(habit.id)} className="save-btn">
+                  ✓
+                </button>
+                <button
+                  onClick={() => setEditingId(null)}
+                  className="cancel-edit-btn"
+                >
+                  ✕
+                </button>
+              </div>
+            ) : (
+              <>
+                <div className="manage-habit-info">
+                  <div className="manage-habit-name">{habit.name}</div>
+                  <div className="manage-habit-meta">{habit.base_xp} XP</div>
+                </div>
+                <button
+                  onClick={() => startEdit(habit)}
+                  className="icon-btn edit-btn"
+                >
+                  ✏️
+                </button>
+                <button
+                  onClick={() => handleDelete(habit.id)}
+                  className="icon-btn delete-btn"
+                >
+                  🗑️
+                </button>
+              </>
+            )}
           </div>
         ))}
       </div>

@@ -1,6 +1,20 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "./Layout.css";
+
+const CHARACTER_STAGES = [
+  "🥚",
+  "🐣",
+  "🐥",
+  "🐤",
+  "💚",
+  "💛",
+  "🦋",
+  "🐉",
+  "👑",
+  "⭐",
+];
+
 export default function Layout() {
   const { user, logout } = useAuth();
 
@@ -30,8 +44,15 @@ export default function Layout() {
 
         {user && (
           <div className="sidebar-footer">
-            <div className="sidebar-level">Lever {user.level}</div>
-            <div className="sidebar-xp">{user.total_xp} total XP</div>
+            <div className="sidebar-user">
+              <span className="sidebar-avatar">
+                {CHARACTER_STAGES[Math.min(user.character_stage, 9)]}
+              </span>
+              <div>
+                <div className="sidebar-level">Level {user.level}</div>
+                <div className="sidebar-xp">{user.total_xp} total XP</div>
+              </div>
+            </div>
             <button onClick={logout} className="logout-btn">
               Выйти
             </button>
